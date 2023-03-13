@@ -8,11 +8,25 @@
 	"item": [
 		{
 			"name": "Get Users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = pm.response.json();\r",
+							"var id = jsonData[0].id;\r",
+							"pm.globals.set(\"client_id\", id);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "https://gorest.co.in/public/v2/users/1257",
+					"raw": "https://gorest.co.in/public/v2/users/",
 					"protocol": "https",
 					"host": [
 						"gorest",
@@ -23,7 +37,7 @@
 						"public",
 						"v2",
 						"users",
-						"1257"
+						""
 					]
 				}
 			},
@@ -31,6 +45,19 @@
 		},
 		{
 			"name": "User Creation",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.variables.set(\"email\", `test${Math.floor(Math.random() * 10000)}@test.com`);\r",
+							"pm.variables.set(\"name\", `test${Math.floor(Math.random() * 10000)}`);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -46,7 +73,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Amy Yang\",\r\n    \"gender\": \"female\",\r\n    \"email\": \"amy.yang@15ce.com\",\r\n    \"status\": \"active\"\r\n}",
+					"raw": "{\r\n    \"name\": \"{{name}}\",\r\n    \"email\": \"{{email}}\",\r\n    \"gender\": \"male\",\r\n    \"status\": \"active\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -54,7 +81,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://gorest.co.in/public/v2/users",
+					"raw": "https://gorest.co.in/public/v2/",
 					"protocol": "https",
 					"host": [
 						"gorest",
@@ -64,7 +91,7 @@
 					"path": [
 						"public",
 						"v2",
-						"users"
+						""
 					]
 				}
 			},
@@ -72,6 +99,19 @@
 		},
 		{
 			"name": "User Edit",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"pm.variables.set(\"email\", `test${Math.floor(Math.random() * 10000)}@test.com`);\r",
+							"pm.variables.set(\"name\", `test${Math.floor(Math.random() * 10000)}`);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -87,7 +127,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Amy Yang\",\r\n    \"gender\": \"male\",\r\n    \"email\": \"amy.yang@15ce.com\",\r\n    \"status\": \"active\"\r\n}",
+					"raw": "{\r\n    \"name\": \"{{name}}\",\r\n    \"email\": \"{{email}}\",\r\n    \"gender\": \"male\",\r\n    \"status\": \"active\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -95,7 +135,7 @@
 					}
 				},
 				"url": {
-					"raw": "https://gorest.co.in/public/v2/users/984639",
+					"raw": "https://gorest.co.in/public/v2/users/1011212",
 					"protocol": "https",
 					"host": [
 						"gorest",
@@ -106,7 +146,7 @@
 						"public",
 						"v2",
 						"users",
-						"984639"
+						"1011212"
 					]
 				}
 			},
@@ -114,6 +154,26 @@
 		},
 		{
 			"name": "User Deleted",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
 			"request": {
 				"auth": {
 					"type": "bearer",
@@ -128,7 +188,7 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "https://gorest.co.in/public/v2/users/984639",
+					"raw": "https://gorest.co.in/public/v2/users/{{client_id}}",
 					"protocol": "https",
 					"host": [
 						"gorest",
@@ -139,7 +199,7 @@
 						"public",
 						"v2",
 						"users",
-						"984639"
+						"{{client_id}}"
 					]
 				}
 			},
@@ -150,6 +210,10 @@
 		{
 			"key": "Bearer Token",
 			"value": "25569952dfcaa58e1b35c0ad778dbcb10d91eba0e49f6490114627673b254078"
+		},
+		{
+			"key": "client_id",
+			"value": "null"
 		}
 	]
 }
