@@ -6,7 +6,7 @@ This repository contains all requested scenarios and Exercises!
 
 Java 11 </p>
 Maven </p>
-Join 4 </p>
+Junit 4 </p>
 JunitJupiterAPI </p>
 Rest Assured </p>
 Extended Reports </p>
