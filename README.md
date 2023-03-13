@@ -1,49 +1,49 @@
-# Repositório de Testes
-Este repositório Todos os cenários e Exercícios solicitados
 
-# 💻Atualmente o projeto utiliza as seguintes Tecnologias E Frameworks💻
+# Test Repository
+This repository contains all requested scenarios and Exercises!
+
+# 💻Currently the project uses the following Technologies And Frameworks💻
 
 Java 11 </p>
 Maven </p>
-Junit 4 </p>
+Join 4 </p>
 JunitJupiterAPI </p>
 Rest Assured </p>
-Extent Reports </p>
+Extended Reports </p>
 Postman </p>
 Selenium Webdriver </p>
 
-# ⚠ Você irá precisa instalar previamente algumas tecnologias, sendo elas ⚠
+# ⚠ You will need to previously install some technologies, namely ⚠
 
 Java 11 </p>
 Maven </p>
 Postman </p>
-Google Chrome
 
-Executando os testes
-Os Testes podem ser executados pela IDEA de sua escolha, desde que o projeto seja aberto com o gerenciador Maven, nas classes:
-Cucumber Runner: "src\test\java\utils\RunnerTest.java"
-Rest Assured: "src\test\java\restassured_automation"
-OBS: Caso queira executar via Linha de comando execute na pasta raiz:
-"mvn -clean test"
+# 🚀 Running the tests 🚀
+The Tests can be executed by the IDEA of your choice, as long as the project is opened with the Maven manager, in the classes: </p>
+Cucumber Runner: "src\test\java\utils\RunnerTest.java" </p>
+Rest Assured: "src\test\java\restassured_automation" </p>
+NOTE: If you want to run it via the Command Line, run it in the root folder: </p>
+"mvn -clean test" </p>
 
-# 🎋 Explicando a Árvore do código 🎋
+# 🎋 Explaining the Code Tree 🎋
 
-- Testes exploratórios com Postman </p>
-No diretório "..\PostmanAPI" voce vai encontrar a coleção feita para este framework, ela serve para testes exploratórios, que não necessariamente são escritos em código, porém podem ser realizados pelas chamadas das APIS.
+- Exploratory tests with Postman </p>
+In the directory "..\PostmanAPI" you will find the collection made for this framework, it serves for exploratory tests, which are not necessarily written in code, but can be performed by APIS calls.
 
- - Testes de API </p>
-Os testes de integração foram escritos usando o framework Rest Assured e estão localizados no diretório "src\test\java\restassured_automation". Esses testes validam a integração entre diferentes componentes da aplicação que foi disposta, seus métodos e regras de negócio e corpo.
+ - API Tests </p>
+The integration tests were written using the Rest Assured framework and are located in the "src\test\java\restassured_automation" directory. These tests validate the integration between different components of the application that was laid out, its methods and business and body rules.
 
- - Testes de interface </p>
-Os testes de interface foram escritos usando o framework Selenium Webdriver e estão localizados no diretório "src/test/java". Esses testes validam a funcionalidade da interface do usuário, simulando interações com os elementos da página, como clicar em botões ou preencher formulários.
-OBS: os testes com Selenium foram executados em par com o framework Cucumber,  com o objetivo de melhorar a leitura e entendimento dos cenários
+ - Interface Tests </p>
+Interface tests were written using the Selenium Webdriver framework and are located in the "src/test/java" directory. These tests validate user interface functionality by simulating interactions with page elements, such as clicking buttons or filling out forms.
+OBS: the tests with Selenium were executed in pair with the Cucumber framework, with the objective of improving the reading and understanding of the scenarios
 
-- Relatório de testes </p>
-O Extent Reports é utilizado para gerar um relatório completo dos resultados dos testes. Esse relatório chamado de "API.html" e é gerado automaticamente após a execução dos testes e é armazenado no diretório "target/Report"
+- Test report </p>
+Extent Reports is used to generate a complete report of test results. This report is called "API.html" and is automatically generated after running the tests and is stored in the "target/Report" directory
 
-# Observações Referentes ao exercício:
-Para consultar as Evidências dos testes executados, procure pelo diretório: "C:..\target\Report"
-Para consultaer os cenários de automação Web, procure pelo direório: "src\test\resources\features\landing_page_cucumber.feature"
-Para consultaer os cenários de automação da API, procure pelo direório: "src\test\java\restassured_automation"
+# 🧾 Observations regarding the exercise 🧾
+To consult the Evidences of the executed tests, look for the directory: "C:..\target\Report" </p>
+To consult the web automation scenarios, search for the directory: "src\test\resources\features\landing_page_cucumber.feature" </p>
+To query the API automation scenarios, look for the directory: "src\test\java\restassured_automation" </p>
 
-
+# Thank you for your time and oportunity, please if you have some advice for the project contribute!
